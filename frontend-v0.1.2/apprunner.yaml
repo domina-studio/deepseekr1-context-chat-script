@@ -1,13 +1,12 @@
-# apprunner.yaml
 version: 1.0
-runtime: nodejs20  # ou nodejs18, nodejs16
+runtime: nodejs22
 build:
   commands:
     build:
       - npm ci
       - npm run build
 run:
-  runtime-version: 20  # correspondente ao runtime
+  runtime-version: 22.14.0
   command: npm start
   network:
     port: 3000

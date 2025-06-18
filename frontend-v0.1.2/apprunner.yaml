@@ -1,0 +1,16 @@
+# apprunner.yaml
+version: 1.0
+runtime: docker
+build:
+  commands:
+    build:
+      - echo "Build managed by Dockerfile"
+run:
+  runtime-version: latest
+  command: nginx -g 'daemon off;'
+  network:
+    port: 80
+    env: PORT
+  env:
+    - name: VITE_API_URL
+      value: https://seu-backend-alb.us-east-1.elb.amazonaws.com

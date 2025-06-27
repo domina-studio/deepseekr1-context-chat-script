@@ -3,7 +3,7 @@ import { ChatMessages } from "./ChatMessages";
 import { ChatInput } from "./ChatInput";
 import { Message } from "@/types/chat";
 
-const API_BASE_URL = process.env.REACT_APP_API_URL || 'http://18.218.19.90:3000';
+const API_BASE_URL = process.env.REACT_APP_API_URL || 'https://18.218.19.90:3000';
 
 // Generate a simple UUID for conversation_id
 const generateUUID = () => {

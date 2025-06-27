@@ -3,6 +3,8 @@ import { ChatMessages } from "./ChatMessages";
 import { ChatInput } from "./ChatInput";
 import { Message } from "@/types/chat";
 
+const API_BASE_URL = process.env.REACT_APP_API_URL || 'http://18.218.19.90:3000';
+
 // Generate a simple UUID for conversation_id
 const generateUUID = () => {
   return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
@@ -82,7 +84,7 @@ export const ChatInterface = () => {
 
   const sendMessageToBackend = async (message: string) => {
     try {
-      const response = await fetch('/api/message', {
+      const response = await fetch(`${API_BASE_URL}/message`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
